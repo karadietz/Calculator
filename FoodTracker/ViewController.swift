@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     @IBAction func clearButton(_ sender: UIButton) {
         numTextField.text = ""
+        
     }
     
     func numButtonPressed(num: String) {
