@@ -30,6 +30,10 @@ class ViewController: UIViewController {
         numTextField.text = text! + num
     }
     
+    @IBAction func calcButton(_ sender: UIButton) {
+        numTextField.text = "answer"
+    }
+    
     @IBAction func oneButton(_ sender: UIButton) {
         numButtonPressed(num: "1")
     }
