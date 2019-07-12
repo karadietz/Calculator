@@ -9,6 +9,7 @@
 
 //NOTES:
 //when the number buttons are pressed, I think I will want to check whether an operation button was pressed just before it (if so, then the textfield should be cleared first
+//after calculate has been pressed a number appears, if they start pressing new numbers, the answer goes away
 
 import UIKit
 
@@ -19,11 +20,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var CalcLabel: UILabel!
+    
     @IBOutlet weak var numTextField: UITextField!
     
     @IBAction func clearButton(_ sender: UIButton) {
         numTextField.text = ""
-        
     }
     
     func numButtonPressed(num: String) {

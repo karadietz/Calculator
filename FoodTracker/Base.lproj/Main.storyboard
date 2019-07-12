@@ -20,17 +20,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TLl-0M-fwM">
-                                <rect key="frame" x="0.0" y="40" width="375" height="77"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="97"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQe-2b-60o">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="30"/>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQe-2b-60o">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                        <color key="backgroundColor" red="0.23758717713344379" green="0.47145438630683834" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter numbers" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ld6-jU-z6D">
-                                        <rect key="frame" x="0.0" y="38" width="375" height="39"/>
+                                        <rect key="frame" x="0.0" y="55" width="375" height="42"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -41,6 +41,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ld6-jU-z6D" secondAttribute="trailing" id="cO8-xd-vNM"/>
+                                    <constraint firstAttribute="trailing" secondItem="AQe-2b-60o" secondAttribute="trailing" id="gw0-7u-WGi"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-UU-UbB">
@@ -281,15 +282,15 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.70744623235048854" green="0.78988094997332503" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0s2-Vc-b3v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7nb-S3-wFk"/>
                             <constraint firstItem="n6H-dh-vzg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="FDq-U0-vFR"/>
-                            <constraint firstItem="ld6-jU-z6D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="FND-Vt-wgo"/>
+                            <constraint firstItem="ld6-jU-z6D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="FND-Vt-wgo"/>
                             <constraint firstAttribute="bottom" secondItem="T2C-UU-UbB" secondAttribute="bottom" constant="20" symbolic="YES" id="FNh-R9-zGc"/>
                             <constraint firstItem="n6H-dh-vzg" firstAttribute="top" secondItem="EX8-Qp-zE4" secondAttribute="top" id="GEf-3Y-iRz"/>
                             <constraint firstItem="n6H-dh-vzg" firstAttribute="top" secondItem="TLl-0M-fwM" secondAttribute="bottom" constant="72" id="H8l-Bh-bjG"/>
-                            <constraint firstItem="TLl-0M-fwM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="JCu-mn-12w"/>
+                            <constraint firstItem="TLl-0M-fwM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JCu-mn-12w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ld6-jU-z6D" secondAttribute="bottom" constant="550" id="QaV-T2-5Qb"/>
                             <constraint firstItem="n6H-dh-vzg" firstAttribute="leading" secondItem="T2C-UU-UbB" secondAttribute="leading" id="Ui0-q7-INh"/>
                             <constraint firstItem="T2C-UU-UbB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c9T-ff-EEx"/>
@@ -306,6 +307,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="CalcLabel" destination="AQe-2b-60o" id="HS8-05-zeu"/>
                         <outlet property="numTextField" destination="ld6-jU-z6D" id="TS9-Dy-qQY"/>
                     </connections>
                 </viewController>
