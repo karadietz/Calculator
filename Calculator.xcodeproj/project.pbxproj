@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE4BCDDB22D84F7100753E4A /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE4BCDDA22D84F7000753E4A /* logo.jpg */; };
 		EE861E2522D11FB200B55F3F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE861E2422D11FB200B55F3F /* Default-568h@2x.png */; };
 		EEB6352422B86ABD001D7529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6352322B86ABD001D7529 /* AppDelegate.swift */; };
 		EEB6352622B86ABD001D7529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6352522B86ABD001D7529 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE4BCDDA22D84F7000753E4A /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = ../../../Desktop/logo.jpg; sourceTree = "<group>"; };
 		EE861E2422D11FB200B55F3F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EEB6352022B86ABD001D7529 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB6352322B86ABD001D7529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				EEB6352A22B86ACA001D7529 /* Assets.xcassets */,
 				EEB6352C22B86ACA001D7529 /* LaunchScreen.storyboard */,
 				EEB6352F22B86ACA001D7529 /* Info.plist */,
+				EE4BCDDA22D84F7000753E4A /* logo.jpg */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEB6352E22B86ACA001D7529 /* LaunchScreen.storyboard in Resources */,
+				EE4BCDDB22D84F7100753E4A /* logo.jpg in Resources */,
 				EE861E2522D11FB200B55F3F /* Default-568h@2x.png in Resources */,
 				EEB6352B22B86ACA001D7529 /* Assets.xcassets in Resources */,
 				EEB6352922B86ABD001D7529 /* Main.storyboard in Resources */,
