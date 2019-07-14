@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE4BCDDB22D84F7100753E4A /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE4BCDDA22D84F7000753E4A /* logo.jpg */; };
+		EE4BCDDD22DA8D4F00753E4A /* storeButtonPresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4BCDDC22DA8D4F00753E4A /* storeButtonPresses.swift */; };
 		EE861E2522D11FB200B55F3F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE861E2422D11FB200B55F3F /* Default-568h@2x.png */; };
 		EEB6352422B86ABD001D7529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6352322B86ABD001D7529 /* AppDelegate.swift */; };
 		EEB6352622B86ABD001D7529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6352522B86ABD001D7529 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		EE4BCDDA22D84F7000753E4A /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = ../../../Desktop/logo.jpg; sourceTree = "<group>"; };
+		EE4BCDDC22DA8D4F00753E4A /* storeButtonPresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeButtonPresses.swift; sourceTree = "<group>"; };
 		EE861E2422D11FB200B55F3F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EEB6352022B86ABD001D7529 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB6352322B86ABD001D7529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				EEB6352C22B86ACA001D7529 /* LaunchScreen.storyboard */,
 				EEB6352F22B86ACA001D7529 /* Info.plist */,
 				EE4BCDDA22D84F7000753E4A /* logo.jpg */,
+				EE4BCDDC22DA8D4F00753E4A /* storeButtonPresses.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			files = (
 				EEB6352622B86ABD001D7529 /* ViewController.swift in Sources */,
 				EEB6352422B86ABD001D7529 /* AppDelegate.swift in Sources */,
+				EE4BCDDD22DA8D4F00753E4A /* storeButtonPresses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
 
     @IBOutlet weak var CalcLabel: UILabel!
@@ -75,6 +76,22 @@ class ViewController: UIViewController {
     
     @IBAction func zeroButton(_ sender: UIButton) {
         numButtonPressed(num: "0")
+    }
+    
+    func storeNumbers(){
+        
+    }
+    
+    @IBAction func plusButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func subButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func multButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func divButton(_ sender: UIButton) {
     }
 }
 
