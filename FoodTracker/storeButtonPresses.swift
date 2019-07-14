@@ -8,15 +8,15 @@
 
 import Foundation
 
-class StoreButtonPresses:ViewController {
-    var numbersPressed = [Int]()
-    var operationsPressed = [String]()
-    
-    func storeNumber(num: Int){
-        numbersPressed.append(num)
-    }
-    
-    func storeOperation(op: String){
-        operationsPressed.append(op)
-    }
+class StoreButtonPresses: ViewController {
+//    var numbersPressed = [Int]()
+//    var operationsPressed = [String]()
+//
+//    func storeNumber(num: Int){
+//        numbersPressed.append(num)
+//    }
+//
+//    func storeOperation(op: String){
+//        operationsPressed.append(op)
+//    }
 }

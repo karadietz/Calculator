@@ -14,7 +14,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var numbersPressed = [Int]()
+    var operationsPressed = [String]()
+    
+    func storeNumber(num: Int){
+        numbersPressed.append(num)
+    }
+    
+    func storeOperation(op: String){
+        operationsPressed.append(op)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,62 +46,74 @@ class ViewController: UIViewController {
     
     @IBAction func calcButton(_ sender: UIButton) {
         numTextField.text = "answer"
+        print(numbersPressed)
+        print(operationsPressed)
     }
     
     @IBAction func oneButton(_ sender: UIButton) {
         numButtonPressed(num: "1")
+        storeNumber(num: 1)
     }
     
     @IBAction func twoButton(_ sender: UIButton) {
         numButtonPressed(num: "2")
+        storeNumber(num: 2)
     }
     
     @IBAction func threeButton(_ sender: UIButton) {
         numButtonPressed(num: "3")
+        storeNumber(num: 3)
     }
     
     @IBAction func fourButton(_ sender: UIButton) {
         numButtonPressed(num: "4")
+        storeNumber(num: 4)
     }
     
     @IBAction func fiveButton(_ sender: UIButton) {
         numButtonPressed(num: "5")
+        storeNumber(num: 5)
     }
     
     @IBAction func sixButton(_ sender: UIButton) {
         numButtonPressed(num: "6")
+        storeNumber(num: 6)
     }
     
     @IBAction func sevenButton(_ sender: UIButton) {
         numButtonPressed(num: "7")
+        storeNumber(num: 7)
     }
     
     @IBAction func eightButton(_ sender: UIButton) {
         numButtonPressed(num: "8")
+        storeNumber(num: 8)
     }
     
     @IBAction func nineButton(_ sender: UIButton) {
         numButtonPressed(num: "9")
+        storeNumber(num: 9)
     }
     
     @IBAction func zeroButton(_ sender: UIButton) {
         numButtonPressed(num: "0")
-    }
-    
-    func storeNumbers(){
-        
+        storeNumber(num: 0)
     }
     
     @IBAction func plusButton(_ sender: UIButton) {
+        storeOperation(op: "plus")
     }
     
     @IBAction func subButton(_ sender: UIButton) {
+        storeOperation(op: "subtract")
     }
     
     @IBAction func multButton(_ sender: UIButton) {
+        storeOperation(op: "multiply")
     }
     
     @IBAction func divButton(_ sender: UIButton) {
+        storeOperation(op: "divide")
     }
 }
 
