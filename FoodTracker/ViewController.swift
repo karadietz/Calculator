@@ -8,17 +8,19 @@
 
 
 //NOTES:
-//when the number buttons are pressed, I think I will want to check whether an operation button was pressed just before it (if so, then the textfield should be cleared first
 //after calculate has been pressed a number appears, if they start pressing new numbers, the answer goes away
+//change clear button to be all clear or clear (press twice without pushing any other buttons to do all clear). All clear will clear the arrays
 
 import UIKit
 
 class ViewController: UIViewController {
     var numbersPressed = [Int]()
     var operationsPressed = [String]()
+    var shouldClear = false
     
-    func storeNumber(num: Int){
-        numbersPressed.append(num)
+    func storeNumber(){
+        let text:Int? = Int(numTextField.text!)
+        numbersPressed.append(text!)
     }
     
     func storeOperation(op: String){
@@ -40,80 +42,92 @@ class ViewController: UIViewController {
     }
     
     func numButtonPressed(num: String) {
+        if (shouldClear){
+            numTextField.text = ""
+            shouldClear = false
+        }
         let text = numTextField.text
         numTextField.text = text! + num
     }
     
     @IBAction func calcButton(_ sender: UIButton) {
+        storeNumber()
         numTextField.text = "answer"
         print(numbersPressed)
         print(operationsPressed)
+        shouldClear = true
+        
+        //check for multiplication/division. perform those operations on the numbers surrounding them
+        //do nothing if an operation button was just pushed without a number to follow it
+        //do nothing if no numbers have been entered
+        //do nothing if an operation button is pushed before a number
+        //numTextField.text gives an error if it's blank I think so watch out for this
+        
     }
     
     @IBAction func oneButton(_ sender: UIButton) {
         numButtonPressed(num: "1")
-        storeNumber(num: 1)
     }
     
     @IBAction func twoButton(_ sender: UIButton) {
         numButtonPressed(num: "2")
-        storeNumber(num: 2)
     }
     
     @IBAction func threeButton(_ sender: UIButton) {
         numButtonPressed(num: "3")
-        storeNumber(num: 3)
     }
     
     @IBAction func fourButton(_ sender: UIButton) {
         numButtonPressed(num: "4")
-        storeNumber(num: 4)
     }
     
     @IBAction func fiveButton(_ sender: UIButton) {
         numButtonPressed(num: "5")
-        storeNumber(num: 5)
     }
     
     @IBAction func sixButton(_ sender: UIButton) {
         numButtonPressed(num: "6")
-        storeNumber(num: 6)
     }
     
     @IBAction func sevenButton(_ sender: UIButton) {
         numButtonPressed(num: "7")
-        storeNumber(num: 7)
     }
     
     @IBAction func eightButton(_ sender: UIButton) {
         numButtonPressed(num: "8")
-        storeNumber(num: 8)
     }
     
     @IBAction func nineButton(_ sender: UIButton) {
         numButtonPressed(num: "9")
-        storeNumber(num: 9)
     }
     
     @IBAction func zeroButton(_ sender: UIButton) {
         numButtonPressed(num: "0")
-        storeNumber(num: 0)
     }
     
     @IBAction func plusButton(_ sender: UIButton) {
         storeOperation(op: "plus")
+        storeNumber()
+        shouldClear = true
     }
     
     @IBAction func subButton(_ sender: UIButton) {
         storeOperation(op: "subtract")
+        storeNumber()
+        shouldClear = true
     }
     
     @IBAction func multButton(_ sender: UIButton) {
         storeOperation(op: "multiply")
+        storeNumber()
+        shouldClear = true
     }
     
     @IBAction func divButton(_ sender: UIButton) {
         storeOperation(op: "divide")
+        storeNumber()
+        shouldClear = true
+
     }
 }
 
