@@ -8,19 +8,26 @@
 
 
 //NOTES:
+//add textfield for answer?
 //after calculate has been pressed a number appears, if they start pressing new numbers, the answer goes away
 //change clear button to be all clear or clear (press twice without pushing any other buttons to do all clear). All clear will clear the arrays
+//change code to handle decimals (if it's repeating then show that, if it is just long then cut at 8 decimal places or something
+//make button to toggle between decimal or fraction notation
+
 
 import UIKit
 
 class ViewController: UIViewController {
-    var numbersPressed = [Int]()
+    var numbersPressed = [Double]()
     var operationsPressed = [String]()
     var shouldClear = false
     
     func storeNumber(){
-        let text:Int? = Int(numTextField.text!)
-        numbersPressed.append(text!)
+        if let text:Double = Double(numTextField.text!){
+            numbersPressed.append(text)
+        }
+        //let text:Double? = Double(numTextField.text!)
+      //  numbersPressed.append(Double(numTextField!.text!) as! Double?)
     }
     
     func storeOperation(op: String){
@@ -105,6 +112,9 @@ class ViewController: UIViewController {
         numButtonPressed(num: "0")
     }
     
+    @IBAction func decimalButton(_ sender: UIButton) {
+        numButtonPressed(num: ".")
+    }
     @IBAction func plusButton(_ sender: UIButton) {
         storeOperation(op: "plus")
         storeNumber()
