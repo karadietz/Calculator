@@ -19,7 +19,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton! 
     
     
     var numbersPressed = [Double]()
