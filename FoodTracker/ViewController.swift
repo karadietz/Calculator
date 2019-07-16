@@ -64,6 +64,42 @@ class ViewController: UIViewController {
         print(operationsPressed)
         shouldClear = true
         
+        if (operationsPressed == [] || numbersPressed == []) {
+            //do nothing (don't change the textfield)
+        }
+        
+        else if (!operationsPressed.contains("multiply") && !operationsPressed.contains("division")){
+            //add and subtract the numbers in numbersPressed
+            //let len = operationsPressed.count
+            var ans = numbersPressed[0]
+            var i = 0
+            for op in operationsPressed {
+                if op == "plus" {
+                    ans += numbersPressed[i+1]
+                }
+                else if op == "subtract" {
+                    ans -= numbersPressed[i+1]
+                }
+                i += 1
+            }
+            
+            //removes decimal place for integers
+            let integerNum = Int(ans)
+            if (ans - Double(integerNum) == 0.0){
+                numTextField.text = String(integerNum)
+            }
+            else {
+                numTextField.text = String(ans)
+            }
+            
+        }
+        else {
+            //look for multiplication/division, perform those operations first
+            
+        }
+        
+        
+        
         //check for multiplication/division. perform those operations on the numbers surrounding them
         //do nothing if an operation button was just pushed without a number to follow it
         //do nothing if no numbers have been entered
