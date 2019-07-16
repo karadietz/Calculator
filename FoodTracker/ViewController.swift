@@ -18,9 +18,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var clearButton: UIButton!
+    
+    
     var numbersPressed = [Double]()
     var operationsPressed = [String]()
     var shouldClear = false
+    var isAllClear = true
+    var clearPressedOnce = false
     
     func storeNumber(){
         if let text:Double = Double(numTextField.text!){
@@ -44,8 +50,35 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var numTextField: UITextField!
     
+    func setClearText(doAllClear: Bool){
+        if doAllClear {
+            clearButton.setTitle("ALL CLEAR", for: .normal)
+            clearButton.titleLabel?.font = UIFont(name: "System Thin", size: 22)
+        }
+        else {
+            clearButton.setTitle("CLEAR", for: .normal)
+            clearButton.titleLabel?.font = UIFont(name: "System Thin", size: 37)
+            
+        }
+    }
+    
     @IBAction func clearButton(_ sender: UIButton) {
         numTextField.text = ""
+        if clearButton.titleLabel!.text == "ALL CLEAR" {
+            numbersPressed = []
+            operationsPressed = []
+        }
+        else {
+            setClearText(doAllClear: true)
+        }
+//        if clearPressedOnce {
+//            setClearText(doAllClear: true)
+//            clearPressedOnce = false
+//        }
+//        else {
+//            setClearText(doAllClear: false)
+//            clearPressedOnce = true
+//        }
     }
     
     func numButtonPressed(num: String) {
@@ -55,6 +88,9 @@ class ViewController: UIViewController {
         }
         let text = numTextField.text
         numTextField.text = text! + num
+       // isAllClear = false
+        clearPressedOnce = false
+        setClearText(doAllClear: clearPressedOnce)
     }
     
     @IBAction func calcButton(_ sender: UIButton) {
@@ -173,7 +209,6 @@ class ViewController: UIViewController {
         storeOperation(op: "divide")
         storeNumber()
         shouldClear = true
-
     }
 }
 

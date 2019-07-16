@@ -45,7 +45,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-UU-UbB">
-                                <rect key="frame" x="119" y="605" width="137" height="42"/>
+                                <rect key="frame" x="89" y="605" width="197" height="42"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Y1d-TW-dvt"/>
@@ -108,10 +108,13 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6H-dh-vzg">
-                                <rect key="frame" x="119" y="189" width="107" height="57"/>
+                                <rect key="frame" x="89" y="189" width="137" height="58"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="37"/>
-                                <state key="normal" title="CLEAR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="Nca-6J-9KL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <state key="normal" title="ALL CLEAR">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -312,7 +315,7 @@
                         <color key="backgroundColor" red="0.70744623235048854" green="0.78988094997332503" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0s2-Vc-b3v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7nb-S3-wFk"/>
-                            <constraint firstItem="n6H-dh-vzg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="FDq-U0-vFR"/>
+                            <constraint firstItem="n6H-dh-vzg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="FDq-U0-vFR"/>
                             <constraint firstItem="ld6-jU-z6D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="FND-Vt-wgo"/>
                             <constraint firstAttribute="bottom" secondItem="T2C-UU-UbB" secondAttribute="bottom" constant="20" symbolic="YES" id="FNh-R9-zGc"/>
                             <constraint firstItem="n6H-dh-vzg" firstAttribute="top" secondItem="EX8-Qp-zE4" secondAttribute="top" id="GEf-3Y-iRz"/>
@@ -335,6 +338,7 @@
                     </view>
                     <connections>
                         <outlet property="CalcLabel" destination="AQe-2b-60o" id="HS8-05-zeu"/>
+                        <outlet property="clearButton" destination="n6H-dh-vzg" id="kHI-Ki-JcB"/>
                         <outlet property="numTextField" destination="ld6-jU-z6D" id="TS9-Dy-qQY"/>
                     </connections>
                 </viewController>
