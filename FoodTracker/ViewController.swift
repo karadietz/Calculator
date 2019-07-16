@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     var shouldClear = false
     var isAllClear = true
     var clearPressedOnce = false
+    var justCalculated = false
     
     func storeNumber(){
         if let text:Double = Double(numTextField.text!){
@@ -82,6 +83,10 @@ class ViewController: UIViewController {
     }
     
     func numButtonPressed(num: String) {
+        if justCalculated {
+            numbersPressed = []
+            operationsPressed = []
+        }
         if (shouldClear){
             numTextField.text = ""
             shouldClear = false
@@ -91,17 +96,20 @@ class ViewController: UIViewController {
        // isAllClear = false
         clearPressedOnce = false
         setClearText(doAllClear: clearPressedOnce)
+        justCalculated = false
     }
     
     @IBAction func calcButton(_ sender: UIButton) {
         storeNumber()
-        numTextField.text = "answer"
+        //numTextField.text = "answer"
         print(numbersPressed)
         print(operationsPressed)
         shouldClear = true
+        justCalculated = true
         
         if (operationsPressed == [] || numbersPressed == []) {
             //do nothing (don't change the textfield)
+            print("an array is empty")
         }
         
         else if (!operationsPressed.contains("multiply") && !operationsPressed.contains("division")){
@@ -188,27 +196,47 @@ class ViewController: UIViewController {
         numButtonPressed(num: ".")
     }
     @IBAction func plusButton(_ sender: UIButton) {
+        if justCalculated {
+            numbersPressed = []
+            operationsPressed = []
+        }
         storeOperation(op: "plus")
         storeNumber()
         shouldClear = true
+        justCalculated = false
     }
     
     @IBAction func subButton(_ sender: UIButton) {
+        if justCalculated {
+            numbersPressed = []
+            operationsPressed = []
+        }
         storeOperation(op: "subtract")
         storeNumber()
         shouldClear = true
+        justCalculated = false
     }
     
     @IBAction func multButton(_ sender: UIButton) {
+        if justCalculated {
+            numbersPressed = []
+            operationsPressed = []
+        }
         storeOperation(op: "multiply")
         storeNumber()
         shouldClear = true
+        justCalculated = false
     }
     
     @IBAction func divButton(_ sender: UIButton) {
+        if justCalculated {
+            numbersPressed = []
+            operationsPressed = []
+        }
         storeOperation(op: "divide")
         storeNumber()
         shouldClear = true
-    }
+        justCalculated = false
+   }
 }
 
