@@ -19,7 +19,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var clearButton: UIButton! 
+    @IBOutlet weak var clearButton: UIButton!
     
     
     var numbersPressed = [Double]()
@@ -99,6 +99,29 @@ class ViewController: UIViewController {
         justCalculated = false
     }
     
+    func addSubNumbers() {
+        var ans = numbersPressed[0]
+        var i = 0
+        for op in operationsPressed {
+            if op == "plus" {
+                ans += numbersPressed[i+1]
+            }
+            else if op == "subtract" {
+                ans -= numbersPressed[i+1]
+            }
+            i += 1
+        }
+        
+        //removes decimal place for integers
+        let integerNum = Int(ans)
+        if (ans - Double(integerNum) == 0.0){
+            numTextField.text = String(integerNum)
+        }
+        else {
+            numTextField.text = String(ans)
+        }
+    }
+    
     @IBAction func calcButton(_ sender: UIButton) {
         storeNumber()
         //numTextField.text = "answer"
@@ -115,36 +138,41 @@ class ViewController: UIViewController {
         else if (!operationsPressed.contains("multiply") && !operationsPressed.contains("division")){
             //add and subtract the numbers in numbersPressed
             //let len = operationsPressed.count
-            var ans = numbersPressed[0]
-            var i = 0
-            for op in operationsPressed {
-                if op == "plus" {
-                    ans += numbersPressed[i+1]
-                }
-                else if op == "subtract" {
-                    ans -= numbersPressed[i+1]
-                }
-                i += 1
-            }
-            
-            //removes decimal place for integers
-            let integerNum = Int(ans)
-            if (ans - Double(integerNum) == 0.0){
-                numTextField.text = String(integerNum)
-            }
-            else {
-                numTextField.text = String(ans)
-            }
-            
+            addSubNumbers()
         }
         else {
             //look for multiplication/division, perform those operations first
+            var i = 0
+            //var ops = [Int]()
+            for item in operationsPressed {
+                var temp = 0.0
+                var flag = false
+                if (item == "multiply") {
+                    temp = numbersPressed[i] * numbersPressed[i+1]
+                    flag = true
+                }
+                else if (item == "divide") {
+                    temp = numbersPressed[i]/numbersPressed[i+1]
+                    //watch for errors here
+                    flag = true
+                }
+                if flag {
+                    numbersPressed[i] = temp
+                    numbersPressed.remove(at: i+1)
+                    operationsPressed.remove(at: i)
+                    i-=1
+                }
+                i+=1
+            }
+            
+            print(operationsPressed)
+            addSubNumbers()
+            
+            //do those operations first, then do the remaining operations on the rest of the numbers
             
         }
         
         
-        
-        //check for multiplication/division. perform those operations on the numbers surrounding them
         //do nothing if an operation button was just pushed without a number to follow it
         //do nothing if no numbers have been entered
         //do nothing if an operation button is pushed before a number
