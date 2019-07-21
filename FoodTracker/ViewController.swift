@@ -43,8 +43,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+    }
+    override open var shouldAutorotate: Bool {
+        return false
     }
 
     @IBOutlet weak var CalcLabel: UILabel!
@@ -135,7 +138,7 @@ class ViewController: UIViewController {
             print("an array is empty")
         }
         
-        else if (!operationsPressed.contains("multiply") && !operationsPressed.contains("division")){
+        else if (!operationsPressed.contains("multiply") && !operationsPressed.contains("divide")){
             //add and subtract the numbers in numbersPressed
             //let len = operationsPressed.count
             addSubNumbers()
@@ -153,6 +156,7 @@ class ViewController: UIViewController {
                 }
                 else if (item == "divide") {
                     temp = numbersPressed[i]/numbersPressed[i+1]
+                    print(temp)
                     //watch for errors here
                     flag = true
                 }
@@ -167,12 +171,9 @@ class ViewController: UIViewController {
             
             print(operationsPressed)
             addSubNumbers()
-            
-            //do those operations first, then do the remaining operations on the rest of the numbers
+
             
         }
-        
-        
         //do nothing if an operation button was just pushed without a number to follow it
         //do nothing if no numbers have been entered
         //do nothing if an operation button is pushed before a number
