@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTracker/ViewController.swift"
-            timestampString = "585422116.692819"
+            timestampString = "586669421.578549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "ViewController"
             landmarkType = "3">
             <Locations>
@@ -118,13 +118,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTracker/ViewController.swift"
-            timestampString = "585422116.693536"
+            timestampString = "586669421.579461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "setClearText(doAllClear:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

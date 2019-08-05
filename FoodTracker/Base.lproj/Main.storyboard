@@ -339,7 +339,10 @@
                     <connections>
                         <outlet property="CalcLabel" destination="AQe-2b-60o" id="HS8-05-zeu"/>
                         <outlet property="clearButton" destination="n6H-dh-vzg" id="kHI-Ki-JcB"/>
+                        <outlet property="divButton" destination="l1U-M1-nfV" id="in3-zG-F0n"/>
+                        <outlet property="multButton" destination="91f-VO-sWp" id="nNB-NV-GsV"/>
                         <outlet property="numTextField" destination="ld6-jU-z6D" id="TS9-Dy-qQY"/>
+                        <outlet property="subButton" destination="oJp-7p-m4q" id="t8t-EQ-dTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

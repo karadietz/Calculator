@@ -10,10 +10,9 @@
 //NOTES:
 //add textfield for answer?
 //after calculate has been pressed a number appears, if they start pressing new numbers, the answer goes away
-//change clear button to be all clear or clear (press twice without pushing any other buttons to do all clear). All clear will clear the arrays
-//change code to handle decimals (if it's repeating then show that, if it is just long then cut at 8 decimal places or something
 //make button to toggle between decimal or fraction notation
-
+//ensure it goes number -> operation-> number...
+//make disabled buttons different colour
 
 import UIKit
 
@@ -33,10 +32,8 @@ class ViewController: UIViewController {
         if let text:Double = Double(numTextField.text!){
             numbersPressed.append(text)
         }
-        //let text:Double? = Double(numTextField.text!)
-      //  numbersPressed.append(Double(numTextField!.text!) as! Double?)
     }
-    
+
     func storeOperation(op: String){
         operationsPressed.append(op)
     }
@@ -44,15 +41,42 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+//        plusButton?.isEnabled = true
+//        subButton?.isEnabled = true
+//        multButton?.isEnabled = true
+//        divButton?.isEnabled = true
     }
+    
     override open var shouldAutorotate: Bool {
         return false
     }
 
-    @IBOutlet weak var CalcLabel: UILabel!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var subButton: UIButton!
+    @IBOutlet weak var multButton: UIButton!
+    @IBOutlet weak var divButton: UIButton!
     
+    @IBOutlet weak var CalcLabel: UILabel!
     @IBOutlet weak var numTextField: UITextField!
+
+    func setButtons(enable: Bool = true){
+        plusButton?.isEnabled = enable
+        subButton?.isEnabled = enable
+        multButton?.isEnabled = enable
+        divButton?.isEnabled = enable
+//        if enable {
+//            plusButton?.isEnabled = true
+//            subButton?.isEnabled = true
+//            multButton?.isEnabled = true
+//            divButton?.isEnabled = true
+//        } else {
+//            plusButton?.isEnabled = false
+//            subButton?.isEnabled = false
+//            multButton?.isEnabled = false
+//            divButton?.isEnabled = false
+//        }
+
+    }
     
     func setClearText(doAllClear: Bool){
         if doAllClear {
@@ -75,14 +99,11 @@ class ViewController: UIViewController {
         else {
             setClearText(doAllClear: true)
         }
-//        if clearPressedOnce {
-//            setClearText(doAllClear: true)
-//            clearPressedOnce = false
-//        }
-//        else {
-//            setClearText(doAllClear: false)
-//            clearPressedOnce = true
-//        }
+        setButtons()
+//        plusButton?.isEnabled = true
+//        subButton?.isEnabled = true
+//        multButton?.isEnabled = true
+//        divButton?.isEnabled = true
     }
     
     func numButtonPressed(num: String) {
@@ -100,6 +121,18 @@ class ViewController: UIViewController {
         clearPressedOnce = false
         setClearText(doAllClear: clearPressedOnce)
         justCalculated = false
+        
+//        plusButton.isEnabled = true
+        //        subButton.isEnabled = true
+        //        multButton.isEnabled = true
+        //        divButton.isEnabled = true
+        
+        setButtons()
+//        plusButton?.isEnabled = true
+//        subButton?.isEnabled = true
+//        multButton?.isEnabled = true
+//        divButton?.isEnabled = true
+        
     }
     
     func addSubNumbers() {
@@ -137,7 +170,7 @@ class ViewController: UIViewController {
             //do nothing (don't change the textfield)
             print("an array is empty")
         }
-        
+            
         else if (!operationsPressed.contains("multiply") && !operationsPressed.contains("divide")){
             //add and subtract the numbers in numbersPressed
             //let len = operationsPressed.count
@@ -171,7 +204,7 @@ class ViewController: UIViewController {
             
             print(operationsPressed)
             addSubNumbers()
-
+            
             
         }
         //do nothing if an operation button was just pushed without a number to follow it
@@ -233,6 +266,13 @@ class ViewController: UIViewController {
         storeNumber()
         shouldClear = true
         justCalculated = false
+        
+        setButtons(enable: false)
+        plusButton?.isEnabled = true
+        //pressing it twice will unclick it
+//        subButton?.isEnabled = false
+//        multButton?.isEnabled = false
+//        divButton?.isEnabled = false
     }
     
     @IBAction func subButton(_ sender: UIButton) {
@@ -244,6 +284,12 @@ class ViewController: UIViewController {
         storeNumber()
         shouldClear = true
         justCalculated = false
+        
+        setButtons(enable: false)
+        subButton?.isEnabled = true
+//        plusButton?.isEnabled = false
+//        multButton?.isEnabled = false
+//        divButton?.isEnabled = false
     }
     
     @IBAction func multButton(_ sender: UIButton) {
@@ -255,6 +301,12 @@ class ViewController: UIViewController {
         storeNumber()
         shouldClear = true
         justCalculated = false
+        
+        setButtons(enable: false)
+        multButton?.isEnabled = true
+//        plusButton?.isEnabled = false
+//        subButton?.isEnabled = false
+//        divButton?.isEnabled = false
     }
     
     @IBAction func divButton(_ sender: UIButton) {
@@ -266,6 +318,12 @@ class ViewController: UIViewController {
         storeNumber()
         shouldClear = true
         justCalculated = false
+        
+        setButtons(enable: false)
+        divButton?.isEnabled = true
+//        plusButton?.isEnabled = false
+//        subButton?.isEnabled = false
+//        multButton?.isEnabled = false
    }
 }
 
