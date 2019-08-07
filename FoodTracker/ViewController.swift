@@ -14,12 +14,22 @@
 //ensure it goes number -> operation-> number...
 //make disabled buttons different colour
 
+//instead of disabling buttons after it is pressed, allow other buttons to be pressed except then if it is, that operation replaces which ever one was pressed before
+
 import UIKit
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var clearButton: UIButton!
     
+    @IBOutlet weak var plusButton: UIButton!
+//    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var subButton: UIButton!
+    @IBOutlet weak var multButton: UIButton!
+    @IBOutlet weak var divButton: UIButton!
+    
+    @IBOutlet weak var CalcLabel: UILabel!
+    @IBOutlet weak var numTextField: UITextField!
     
     var numbersPressed = [Double]()
     var operationsPressed = [String]()
@@ -51,30 +61,39 @@ class ViewController: UIViewController {
         return false
     }
 
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var subButton: UIButton!
-    @IBOutlet weak var multButton: UIButton!
-    @IBOutlet weak var divButton: UIButton!
-    
-    @IBOutlet weak var CalcLabel: UILabel!
-    @IBOutlet weak var numTextField: UITextField!
+    func setButtonColour(enable: Bool = true) {
+        if plusButton?.isEnabled == true {
+            plusButton?.backgroundColor = UIColor.darkGray
+        } else {
+            plusButton?.backgroundColor = UIColor.lightGray
+        }
+        if subButton?.isEnabled == true {
+            subButton?.backgroundColor = UIColor.darkGray
+        } else {
+            subButton?.backgroundColor = UIColor.lightGray
+        }
+        if multButton?.isEnabled == true {
+            multButton?.backgroundColor = UIColor.darkGray
+        } else {
+            multButton?.backgroundColor = UIColor.lightGray
+        }
+        if divButton?.isEnabled == true {
+            divButton?.backgroundColor = UIColor.darkGray
+        } else {
+            divButton?.backgroundColor = UIColor.lightGray
+        }
+
+    }
 
     func setButtons(enable: Bool = true){
         plusButton?.isEnabled = enable
         subButton?.isEnabled = enable
         multButton?.isEnabled = enable
         divButton?.isEnabled = enable
-//        if enable {
-//            plusButton?.isEnabled = true
-//            subButton?.isEnabled = true
-//            multButton?.isEnabled = true
-//            divButton?.isEnabled = true
-//        } else {
-//            plusButton?.isEnabled = false
-//            subButton?.isEnabled = false
-//            multButton?.isEnabled = false
-//            divButton?.isEnabled = false
-//        }
+//        print(plusButton?.isEnabled as Any)
+//        print(subButton?.isEnabled as Any)
+//        print(multButton?.isEnabled as Any)
+//        print(divButton?.isEnabled as Any)
 
     }
     
@@ -99,11 +118,8 @@ class ViewController: UIViewController {
         else {
             setClearText(doAllClear: true)
         }
-        setButtons()
-//        plusButton?.isEnabled = true
-//        subButton?.isEnabled = true
-//        multButton?.isEnabled = true
-//        divButton?.isEnabled = true
+        setButtons(enable: true)
+        setButtonColour()
     }
     
     func numButtonPressed(num: String) {
@@ -122,17 +138,8 @@ class ViewController: UIViewController {
         setClearText(doAllClear: clearPressedOnce)
         justCalculated = false
         
-//        plusButton.isEnabled = true
-        //        subButton.isEnabled = true
-        //        multButton.isEnabled = true
-        //        divButton.isEnabled = true
-        
         setButtons()
-//        plusButton?.isEnabled = true
-//        subButton?.isEnabled = true
-//        multButton?.isEnabled = true
-//        divButton?.isEnabled = true
-        
+        setButtonColour()
     }
     
     func addSubNumbers() {
@@ -258,6 +265,13 @@ class ViewController: UIViewController {
         numButtonPressed(num: ".")
     }
     @IBAction func plusButton(_ sender: UIButton) {
+        // the following won't work (i.e. what if someone does 3+3+5
+//        print(operationsPressed.last)
+//        if operationsPressed.last == "Optional(\"plus\")" {
+//            operationsPressed.removeLast()
+//            setButtons()
+//        }
+//        else {
         if justCalculated {
             numbersPressed = []
             operationsPressed = []
@@ -269,10 +283,8 @@ class ViewController: UIViewController {
         
         setButtons(enable: false)
         plusButton?.isEnabled = true
-        //pressing it twice will unclick it
-//        subButton?.isEnabled = false
-//        multButton?.isEnabled = false
-//        divButton?.isEnabled = false
+        setButtonColour()
+//        }
     }
     
     @IBAction func subButton(_ sender: UIButton) {
@@ -287,9 +299,7 @@ class ViewController: UIViewController {
         
         setButtons(enable: false)
         subButton?.isEnabled = true
-//        plusButton?.isEnabled = false
-//        multButton?.isEnabled = false
-//        divButton?.isEnabled = false
+        setButtonColour()
     }
     
     @IBAction func multButton(_ sender: UIButton) {
@@ -304,9 +314,7 @@ class ViewController: UIViewController {
         
         setButtons(enable: false)
         multButton?.isEnabled = true
-//        plusButton?.isEnabled = false
-//        subButton?.isEnabled = false
-//        divButton?.isEnabled = false
+        setButtonColour()
     }
     
     @IBAction func divButton(_ sender: UIButton) {
@@ -321,9 +329,7 @@ class ViewController: UIViewController {
         
         setButtons(enable: false)
         divButton?.isEnabled = true
-//        plusButton?.isEnabled = false
-//        subButton?.isEnabled = false
-//        multButton?.isEnabled = false
+        setButtonColour()
    }
 }
 
