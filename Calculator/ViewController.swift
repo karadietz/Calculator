@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  FoodTracker
+//  Calculator
 //
 //  Created by Kara Dietz on 2019-06-17.
 //  Copyright © 2019 Kara Dietz. All rights reserved.
