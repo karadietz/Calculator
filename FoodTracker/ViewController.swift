@@ -5,8 +5,6 @@
 //  Created by Kara Dietz on 2019-06-17.
 //  Copyright © 2019 Kara Dietz. All rights reserved.
 //
-
-
 //NOTES:
 //add textfield for answer?
 //after calculate has been pressed a number appears, if they start pressing new numbers, the answer goes away
@@ -332,4 +330,3 @@ class ViewController: UIViewController {
         setButtonColour()
    }
 }
-
